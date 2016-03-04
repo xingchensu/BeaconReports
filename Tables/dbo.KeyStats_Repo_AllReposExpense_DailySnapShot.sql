@@ -1,0 +1,40 @@
+CREATE TABLE [dbo].[KeyStats_Repo_AllReposExpense_DailySnapShot]
+(
+[ID] [int] NOT NULL IDENTITY(1, 1),
+[RepoExpenseID] [uniqueidentifier] NULL,
+[RepoCompany] [nvarchar] (250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[new_repoid] [uniqueidentifier] NOT NULL,
+[RepoID] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[RepoTypeValue] [int] NULL,
+[RepoType] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[new_topic] [nvarchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[repoStatusCode] [int] NULL,
+[RepoStatus] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ExpenseID] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[StageValue] [int] NULL,
+[expenseStage] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[stage] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Type] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[description] [nvarchar] (250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Quantity] [int] NULL,
+[UnitPrice] [money] NULL,
+[new_expense] [money] NULL,
+[Payee] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[InvoiceID] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[paymentstatus] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Collector] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CollectorGUID] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[owneridname] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[closedon] [datetime] NULL,
+[CustomerState] [nvarchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CustomerStatecode] [int] NULL,
+[EquipTypes] [nvarchar] (250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SnapshotDate] [datetime] NOT NULL CONSTRAINT [DF_SalesRanking_AllReposExpense_DailySnapShot_SnapshotDate] DEFAULT (getdate()),
+[CreditManagerGUID] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CreditManager] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SalesPersonGUID] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SalesPerson] [nvarchar] (160) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[KeyStats_Repo_AllReposExpense_DailySnapShot] ADD CONSTRAINT [PK_SalesRanking_AllReposExpense_DailySnapShot] PRIMARY KEY CLUSTERED  ([ID]) ON [PRIMARY]
+GO

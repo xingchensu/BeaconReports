@@ -1,0 +1,5 @@
+IF NOT EXISTS (SELECT * FROM master.dbo.syslogins WHERE loginname = N'ECS\BLarson')
+CREATE LOGIN [ECS\BLarson] FROM WINDOWS
+GO
+CREATE USER [ECS\BLarson] FOR LOGIN [ECS\BLarson]
+GO

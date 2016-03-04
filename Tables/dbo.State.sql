@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[State]
+(
+[stateID] [int] NOT NULL IDENTITY(1, 1) NOT FOR REPLICATION,
+[state] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[stateimage] [nvarchar] (150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[State] ADD CONSTRAINT [PK_State] PRIMARY KEY CLUSTERED  ([stateID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO
