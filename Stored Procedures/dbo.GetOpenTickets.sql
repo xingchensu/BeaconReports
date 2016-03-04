@@ -18,7 +18,7 @@ CREATE PROCEDURE [dbo].[GetOpenTickets]
     @ClientName AS VARCHAR(50) = NULL
 AS 
     BEGIN
-  --xsu1  
+  --xsu12 
         SET NOCOUNT ON;
 
         SELECT  p.TicketID ,
